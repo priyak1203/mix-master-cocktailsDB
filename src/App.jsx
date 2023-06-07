@@ -11,16 +11,23 @@ const router = createBrowserRouter([
         element: <Landing />,
       },
       {
-        path: '/cocktail',
+        path: 'cocktail',
         element: <Cocktail />,
       },
       {
-        path: '/about',
-        element: <About />,
+        path: 'newsletter',
+        element: <Newsletter />,
       },
       {
-        path: '/newsletter',
-        element: <Newsletter />,
+        path: 'about',
+        element: <About />,
+        children: [
+          { path: 'company', element: <h3>Our Company</h3> },
+          {
+            path: 'person',
+            element: <h3>John Doe</h3>,
+          },
+        ],
       },
     ],
   },
