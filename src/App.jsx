@@ -1,6 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 
-import { About, Cocktail, HomeLayout, Landing, Newsletter } from './Pages';
+import { About, Cocktail, HomeLayout, Landing, Newsletter } from './pages';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -15,19 +15,12 @@ const router = createBrowserRouter([
         element: <Cocktail />,
       },
       {
-        path: 'newsletter',
-        element: <Newsletter />,
-      },
-      {
         path: 'about',
         element: <About />,
-        children: [
-          { index: true, element: <h3>Our Company</h3> },
-          {
-            path: 'person',
-            element: <h3>John Doe</h3>,
-          },
-        ],
+      },
+      {
+        path: 'newsletter',
+        element: <Newsletter />,
       },
     ],
   },
