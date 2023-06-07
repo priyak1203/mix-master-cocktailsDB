@@ -6,6 +6,7 @@
   --primary-500: #10b981;
   /* grey */
   --grey-50: #f8fafc;
+  --grey-500: #64748b;
   --grey-900: #0f172a;
 
   /* rest of the colors */
@@ -14,7 +15,7 @@
   /* rest of the vars */
   --backgroundColor: var(--grey-50);
   --textColor: var(--grey-900);
-
+  --letterSpacing: 1px;
   --transition: 0.3s ease-in-out all;
   --max-width: 1120px;
   --view-width: 90vw;
@@ -42,8 +43,30 @@ body {
   color: var(--textColor);
 }
 
+p {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 2.5rem); /* Small heading */
+}
+
 a {
   text-decoration: none;
 }
 
 /* ============= PROJECT CSS =============== */
+.page {
+  width: var(--view-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
