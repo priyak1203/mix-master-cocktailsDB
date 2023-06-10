@@ -7,6 +7,7 @@
   --primary-700: #047857;
   /* grey */
   --grey-50: #f8fafc;
+  --grey-400: #94a3b8;
   --grey-500: #64748b;
   --grey-900: #0f172a;
 
@@ -107,6 +108,26 @@ a {
 .btn:hover {
   background: var(--primary-700);
   box-shadow: var(--shadow-3);
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 6rem;
+  height: 6rem;
+  border: 5px solid var(--grey-400);
+  border-top-color: var(--primary-500);
+  border-radius: 50%;
+  animation: spinner 0.6s linear infinite;
+}
+
+.loading-center {
+  margin: 0 auto;
+  margin-top: 3rem;
 }
 
 /* ============= PROJECT CSS =============== */
