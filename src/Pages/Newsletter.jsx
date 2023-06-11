@@ -8,9 +8,15 @@ export const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
 
-  const response = await axios.post(newsletterUrl, data);
-  toast.success(response.data.msg);
-  return redirect('/');
+  try {
+    const response = await axios.post(newsletterUrl, data);
+    toast.success(response.data.msg);
+    return redirect('/');
+  } catch (error) {
+    console.log(error);
+    toast.error(error?.response?.data?.msg);
+    return error;
+  }
 };
 
 const Newsletter = () => {
@@ -23,13 +29,7 @@ const Newsletter = () => {
           <label htmlFor="name" className="form-label">
             name
           </label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            className="form-input"
-            defaultValue="john"
-          />
+          <input type="text" name="name" id="name" className="form-input" />
         </div>
         {/* last name */}
         <div className="form-row">
@@ -41,7 +41,6 @@ const Newsletter = () => {
             name="lastName"
             id="lastName"
             className="form-input"
-            defaultValue="smith"
           />
         </div>
         <div className="form-row">
