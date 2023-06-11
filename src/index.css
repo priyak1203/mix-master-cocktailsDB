@@ -188,3 +188,7 @@ a {
 .form .btn {
   margin-top: 0.5rem;
 }
+
+.form .btn:disabled {
+  cursor: not-allowed;
+}
