@@ -1,7 +1,7 @@
 import { Form } from 'react-router-dom';
 import styled from 'styled-components';
 
-const SearchForm = ({ SearchTerm }) => {
+const SearchForm = ({ searchTerm }) => {
   return (
     <Wrapper>
       <Form className="form">
@@ -9,7 +9,7 @@ const SearchForm = ({ SearchTerm }) => {
           type="search"
           className="form-input"
           name="search"
-          defaultValue={SearchTerm}
+          defaultValue={searchTerm}
         />
         <button type="submit" className="btn">
           search
